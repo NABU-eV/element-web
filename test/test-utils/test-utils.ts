@@ -136,6 +136,16 @@ export function createTestClient(): MatrixClient {
             storeSessionBackupPrivateKey: jest.fn(),
             getKeyBackupInfo: jest.fn().mockResolvedValue(null),
             getEncryptionInfoForEvent: jest.fn().mockResolvedValue(null),
+            getSessionBackupPrivateKey: jest.fn().mockResolvedValue(null),
+            getCrossSigningStatus: jest.fn().mockResolvedValue({
+                publicKeysOnDevice: false,
+                privateKeysInSecretStorage: false,
+                privateKeysCachedLocally: {
+                    masterKey: false,
+                    selfSigningKey: false,
+                    userSigningKey: false,
+                },
+            }),
         }),
 
         getPushActionsForEvent: jest.fn(),
