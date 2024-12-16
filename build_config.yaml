@@ -1,0 +1,2 @@
+modules:
+    - "@nordeck/element-web-guest-module@^2.0.0"
